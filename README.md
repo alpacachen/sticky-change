@@ -5,6 +5,8 @@ sticky-change
 
 watching HTMLElement's sticky state, without ```scroll``` events.
 
+[play on stackblitz](https://stackblitz.com/edit/sticky-change?file=index.tsx) (a bug from stackblitz, when in build-in browser, can not use IntersectionObserver API normally, so just click `open in new window`)
+
 #### Usage ####
 pure
 ```html
