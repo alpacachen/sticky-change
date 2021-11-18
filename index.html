@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="/dist/index.js"></script>
+    <style>
+      .shadow{
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      }
+    </style>
+  </head>
+  <body>
+  <div style="height: 220px"></div>
+  <div id="container" style="height: 300px; overflow: auto">
+    <section>
+      <h1 id="title-1" style="position: sticky; top: 50px">content title</h1>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+    </section>
+    <section>
+      <h1 id="title-2" style="position: sticky; top: 100px">content title</h1>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+    </section>
+  </div>
+  </body>
+<script>
+  const container = document.getElementById('container')
+  new WatchSticky(document.getElementById('title-1'),container,() => {
+    document.getElementById('title-1').classList.toggle('shadow', true)
+  }, () =>{
+    document.getElementById('title-1').classList.toggle('shadow', false)
+  })
+  new WatchSticky(document.getElementById('title-2'),container,() => {
+    document.getElementById('title-2').classList.toggle('shadow', true)
+  }, () =>{
+    document.getElementById('title-2').classList.toggle('shadow', false)
+  })
+</script>
+</html>

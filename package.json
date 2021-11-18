@@ -1,0 +1,14 @@
+{
+  "name": "sticky-change",
+  "version": "1.0.0",
+  "description": "css position: sticky change event",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-loader": "^9.2.6"
+  }
+}
