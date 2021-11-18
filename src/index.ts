@@ -2,6 +2,7 @@ export class WatchSticky{
     private readonly topOb: IntersectionObserver
     private readonly bottomOb: IntersectionObserver
     private _isIntersecting = false
+    private topIsIntersecting = false
     constructor(
         target: HTMLElement,
         root: HTMLElement | null,
@@ -19,14 +20,15 @@ export class WatchSticky{
         bottomSentinel.classList.add('_sticky_bottom');
         parent.appendChild(bottomSentinel)
         this.topOb = new IntersectionObserver(([entry]) => {
-            const {isIntersecting, boundingClientRect, rootBounds} = entry
-            if(!isIntersecting && boundingClientRect.top < rootBounds.top){
+            const {boundingClientRect, rootBounds, isIntersecting} = entry
+            this.topIsIntersecting = isIntersecting
+            if(boundingClientRect.top < rootBounds.top){
                 if(!this._isIntersecting) {
                     this._isIntersecting = true
                     onSticky?.()
                 }
             }
-            if(isIntersecting && boundingClientRect.top > rootBounds.top){
+            if(boundingClientRect.top >= rootBounds.top){
                 if(this._isIntersecting){
                     this._isIntersecting = false
                     offSticky?.()
@@ -35,14 +37,14 @@ export class WatchSticky{
         },{ threshold: 0, root })
         this.topOb.observe(topSentinel)
         this.bottomOb = new IntersectionObserver(([entry]) => {
-            const {isIntersecting, boundingClientRect, rootBounds} = entry
-            if(!isIntersecting && boundingClientRect.top < rootBounds.top){
+            const {boundingClientRect, rootBounds} = entry
+            if(boundingClientRect.top < rootBounds.bottom){
                 if(this._isIntersecting){
                     this._isIntersecting = false
                     offSticky()
                 }
             }
-            if(isIntersecting && boundingClientRect.top > rootBounds.top){
+            if(boundingClientRect.top > rootBounds.top && !this.topIsIntersecting){
                 if(!this._isIntersecting){
                     this._isIntersecting = true
                     onSticky()
