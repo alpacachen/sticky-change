@@ -1,6 +1,6 @@
 {
   "name": "sticky-change",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "repository": "github:alpacachen/sticky-change.git",
   "description": "css position: sticky change event",
   "main": "dist/index.js",
