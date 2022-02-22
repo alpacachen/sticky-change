@@ -1,0 +1,42 @@
+sticky-change
+========
+[![NPM Package][1]][npm-url] [![Build Size][3]][build-size-url]
+
+watching HTMLElement's sticky state, without `scroll` events.
+
+[play on stackblitz](https://stackblitz.com/edit/sticky-change?file=index.tsx) (a bug from stackblitz, when in build-in browser, can not use IntersectionObserver API normally, so just click `open in new window`)
+
+#### [Demo](https://sticky-change.stackblitz.io)
+
+#### Usage
+pure
+```html
+<head>
+    <script src="./dist/index.js"></script>
+</head>
+<div id="page-title" style="position: sticky; top: 30px">Page Title</div>
+<script>
+    new WatchSticky(
+            document.getElementById('page-title'), 
+            null, 
+            () => {
+                document.getElementById('page-title').classList.toggle('shadow', true)
+            },
+            () => {
+                document.getElementById('page-title').classList.toggle('shadow', false)
+            }
+    )
+</script>
+```
+npm
+
+`npm i sticky-change`
+
+`import {WatchSticky} from 'sticky-change'`
+
+`new WatchSticky(ref, null, stickyCb, unstickyCb)`
+
+[1]: https://img.shields.io/npm/v/sticky-change
+[3]: https://badgen.net/bundlephobia/minzip/sticky-change
+[npm-url]: https://www.npmjs.com/package/sticky-change
+[build-size-url]: https://bundlephobia.com/package/sticky-change
