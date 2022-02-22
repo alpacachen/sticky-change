@@ -1,0 +1,3 @@
+files:
+  - source: /src
+    translation: '%original_file_name%.%language%'
