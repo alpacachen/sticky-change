@@ -2,7 +2,7 @@ sticky-change
 ========
 [![NPM Package][1]][npm-url] [![Build Size][3]][build-size-url]
 
-watching HTMLElement's sticky state, without `scroll` events.
+不通过scroll事件来观察HTML元素的sticky状态
 
 [play on stackblitz](https://stackblitz.com/edit/sticky-change?file=index.tsx) (a bug from stackblitz, when in build-in browser, can not use IntersectionObserver API normally, so just click `open in new window`)
 
